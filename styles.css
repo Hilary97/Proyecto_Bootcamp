@@ -11,6 +11,7 @@ body {
   }
   
   header {
+    display: flex;
     color: rgb(203	197	151	);
     padding: 20px;
     line-height: auto;
@@ -43,8 +44,6 @@ section header {
     align-items: center;
     font-size: 30px;
   }
-  
- 
   nav .navegacion 
   {
    display:grid;
@@ -85,11 +84,16 @@ section header {
   box-shadow: 0 0 10px #000000;
   filter: drop-shadow(0 0 10px #14FA27 );
   border-radius: 50px;
+  gap: 20px;
  }
-
+ .imagen {
+  display: grid;
+  grid-template-columns: 2fr 1fr;
+  background:radial-gradient(circle, rgba(3,2,20,1) 44%, rgba(0,255,112,0.3253676470588235) 100%);
+  border-radius: 40px;
   
 
-  
+ } 
   .navegacion a {
     color:  rgb(203	197	151	);
     text-decoration: none;
@@ -116,6 +120,12 @@ section header {
  
   section {
     margin-bottom: auto;
+  }
+  .informacion{
+    background:radial-gradient(circle, rgba(3,2,20,1) 44%, rgba(0,255,112,0.3253676470588235) 100%);
+    border-radius: 40px;
+    
+    
   }
   
   footer
