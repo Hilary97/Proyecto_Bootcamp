@@ -41,6 +41,7 @@ section header {
   .titulo
   {
     align-items: center;
+    font-size: 30px;
   }
   
  
@@ -93,6 +94,7 @@ section header {
     color:  rgb(203	197	151	);
     text-decoration: none;
     font-size: 25px;
+    
     
   }
   .navegacion a:hover{
