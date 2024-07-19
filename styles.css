@@ -1,0 +1,99 @@
+
+body {
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+    margin: 0;
+    padding: 0;
+    background-color: #000000;
+    
+    
+    text-align: center;
+    font-size: auto;
+  }
+  
+  header {
+   
+    color: rgb(203	197	151	);
+    padding: 20px;
+    line-height: auto;
+    margin: auto;
+  }
+  
+  header .titulo {
+    display: grid;
+    
+    align-items: center ;
+    grid-template-rows: 1fr;
+    justify-content: center;
+  
+    margin: 0;
+    text-shadow: 3px 5px 10px #14FA27 ;
+    color: rgb(203	197	151	);
+    text-align: center;
+    font-size: 25px;
+    font-family: cursive ;
+  }
+  nav .navegacion 
+  {
+   display:grid;
+   grid-template-columns: 1fr 1fr 1fr;
+   
+  justify-content: center;
+   list-style: none;
+    
+   padding: 0;
+   text-align: center;
+   font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+   
+ }
+ main{
+ 
+  color: rgb(203	197	151	);
+ 
+ }
+.multimedia img{
+  display: grid;
+  grid-template-rows: 1fr;
+  justify-content: center;
+  margin: auto;
+  
+  box-shadow: 0 0 10px #000000;
+  filter: drop-shadow(0 0 10px #14FA27 );
+  border-radius: 50px;
+ }
+
+  
+
+  
+  .navegacion a {
+    color:  rgb(203	197	151	);
+    text-decoration: none;
+    font-size: 25px;
+    
+  }
+  .navegacion a:hover
+  {
+    color:#14FA27;
+  }
+  img{
+    width:auto;
+    display: grid;
+    
+
+  }
+  main {
+    padding: 20px;
+  }
+ 
+  section {
+    margin-bottom: auto;
+  }
+  
+  footer {
+    background-color: #333;
+    color: #fff;
+    text-align: center;
+    padding: 0px;
+    font-family:'Times New Roman', Times, serif;
+    margin: 0px;
+    width: auto;
+  }
