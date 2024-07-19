@@ -3,7 +3,7 @@ body {
     font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
     margin: 0;
     padding: 0;
-    background-color: #000000;
+     background:radial-gradient(circle, rgba(3,2,20,1) 44%, rgba(0,255,112,0.5255474452554745) 100%);
     
     
     text-align: center;
@@ -11,20 +11,10 @@ body {
   }
   
   header {
-   
     color: rgb(203	197	151	);
     padding: 20px;
     line-height: auto;
     margin: auto;
-  }
-  
-  header .titulo {
-    display: grid;
-    
-    align-items: center ;
-    grid-template-rows: 1fr;
-    justify-content: center;
-  
     margin: 0;
     text-shadow: 3px 5px 10px #14FA27 ;
     color: rgb(203	197	151	);
@@ -32,10 +22,33 @@ body {
     font-size: 25px;
     font-family: cursive ;
   }
+  
+section header {
+     display: flex;
+     flex-direction: row;
+     flex-grow: 2; 
+    align-items: center ;
+    justify-content: center; 
+    
+  
+  
+  }
+  .logo img{
+    width: 45px;
+    border-radius: 100px;
+    margin-right: 20px;
+  }
+  .titulo
+  {
+    align-items: center;
+  }
+  
+ 
   nav .navegacion 
   {
    display:grid;
    grid-template-columns: 1fr 1fr 1fr;
+   border-radius: 30px;
    
   justify-content: center;
    list-style: none;
@@ -44,10 +57,22 @@ body {
    text-align: center;
    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
    
+   
+ }
+ nav {
+  background:radial-gradient(circle, rgba(3,2,20,1) 44%, rgba(0,255,112,0.3253676470588235) 100%);
+  border-radius: 30px;
+  
+  
+  
+  margin: 20px;
+  padding: -10px;
+  
  }
  main{
  
   color: rgb(203	197	151	);
+  
  
  }
 .multimedia img{
@@ -70,8 +95,7 @@ body {
     font-size: 25px;
     
   }
-  .navegacion a:hover
-  {
+  .navegacion a:hover{
     color:#14FA27;
   }
   img{
@@ -79,6 +103,10 @@ body {
     display: grid;
     
 
+  }
+  .navegacion:hover{
+    box-shadow: 0 1px 6px 0 #20212447;
+  border-color: #c1c1c1;
   }
   main {
     padding: 20px;
@@ -88,7 +116,8 @@ body {
     margin-bottom: auto;
   }
   
-  footer {
+  footer
+   {
     background-color: #333;
     color: #fff;
     text-align: center;
@@ -96,4 +125,4 @@ body {
     font-family:'Times New Roman', Times, serif;
     margin: 0px;
     width: auto;
-  }
+  } 
