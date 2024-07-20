@@ -142,7 +142,7 @@ section header {
   @media screen and (max-width: 900px) {
     .box{
       width:100%;
-      margin 10px 0;
+      margin: 10px 0;
     }
 	
   }
