@@ -127,6 +127,22 @@ section header {
     
     
   }
+  .mail button{
+    border-radius: .375rem;
+    background-color:rgb(115	175	114	)		  ;
+    padding-left: 1rem;
+    padding-right: 1rem;
+    font-weight: 500;
+    padding-top: .40rem;
+    padding-bottom: .40rem;
+  }
+  .mail input{
+    border-radius: .375rem;
+    font-size: 1rem;
+    line-height: 1.5rem;
+   
+
+  }
   
   footer
    {
