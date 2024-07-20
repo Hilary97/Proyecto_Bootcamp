@@ -76,10 +76,10 @@ section header {
  
  }
 .multimedia img{
-  display: grid;
-  grid-template-rows: 1fr;
+  
   justify-content: center;
   margin: auto;
+  width: 50%;
   
   box-shadow: 0 0 10px #000000;
   filter: drop-shadow(0 0 10px #14FA27 );
