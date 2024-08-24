@@ -5,15 +5,15 @@ body {
     padding: 0;
      background:radial-gradient(circle, rgba(3,2,20,1) 44%, rgba(0,255,112,0.5255474452554745) 100%);
     
-    
+    justify-content: center;
     text-align: center;
-    font-size: auto;
+    font-size: 19px;
   }
   
   header {
     display: flex;
     color: rgb(203	197	151	);
-    padding: 20px;
+    padding: 0 ;
     line-height: auto;
     margin: auto;
     margin: 0;
@@ -146,7 +146,7 @@ section header {
   
   footer
    {
-    background-color: #333;
+    background:radial-gradient(circle, rgba(3,2,20,1) 44%, rgba(0,255,112,0.3253676470588235) 100%);
     color: #fff;
     text-align: center;
     padding: 0px;
