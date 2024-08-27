@@ -13,7 +13,7 @@ function enviar(){
     
    }
    else{
-    alert("Listo ingresaste ya enviaste tu correo!!")
+    alert("Listo ya enviaste tu correo seras ‼️hackeado‼️ en los proximos 10seg💢!!")
    }
    
    return location.reload()
