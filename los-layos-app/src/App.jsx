@@ -88,7 +88,7 @@ function App() {
       return;
     }
 
-    const mensaje = `🎵 *SOLICITUD DE CONTRATACIÓN* 🎵
+    const mensaje = `📅 *SOLICITUD DE CONTRATACIÓN* 📅
 
 *Nombre:* ${nombreContratante}
 *Día:* ${diaContratacion}
