@@ -31,6 +31,16 @@ function App() {
   const [fechaContratacion, setFechaContratacion] = useState("");
   const [horasRequeridas, setHorasRequeridas] = useState("");
 
+  const formatearFecha = (fecha) => {
+    if (!fecha) return "";
+    const [year, month, day] = fecha.split("-");
+    const meses = [
+      "", "Enero", "Febrero", "Marzo", "Abril", "Mayo", "Junio",
+      "Julio", "Agosto", "Septiembre", "Octubre", "Noviembre", "Diciembre"
+    ];
+    return `${day}/${meses[parseInt(month)]}/${year}`;
+  };
+
   const handleSubmit = (e) => {
     e.preventDefault();
     const emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
@@ -71,7 +81,7 @@ function App() {
 
 *Nombre:* ${nombreContratante}
 *Día:* ${diaContratacion}
-*Fecha:* ${fechaContratacion}
+*Fecha:* ${formatearFecha(fechaContratacion)}
 *Horas requeridas:* ${horasRequeridas} hora(s)
 
 ¡Espero su confirmación!`;
