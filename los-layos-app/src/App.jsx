@@ -351,7 +351,7 @@ function App() {
                 type="text"
                 value={nombreContratante}
                 onChange={(e) => setNombreContratante(e.target.value)}
-                placeholder="Ej: Juan Pérez"
+                placeholder="Su Nombre porfavor"
                 className="w-full px-5 py-4 rounded-xl bg-zinc-900 text-white border border-zinc-600 focus:border-red-500 focus:outline-none transition-colors placeholder-zinc-500"
                 required
               />
