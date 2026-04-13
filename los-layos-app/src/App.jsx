@@ -117,10 +117,7 @@ function App() {
               Síguenos en Facebook
             </a>
             <a
-              href="https://wa.me/message/EW4LOCEM23ERM1"
-              href="https://wa.me/3313023706"
-              target="_blank"
-              rel="noopener noreferrer"
+              href="#contratar"
               className="px-8 py-3 border-2 border-zinc-600 hover:border-green-500 text-white font-bold rounded-full transition-all"
             >
               Contrátanos
@@ -292,7 +289,7 @@ function App() {
       </section>
 
       {/* Contratar Sección */}
-      <section className="py-24 px-6 bg-gradient-to-r from-red-900/30 via-zinc-900 to-red-900/30">
+      <section id="contratar" className="py-24 px-6 bg-gradient-to-r from-red-900/30 via-zinc-900 to-red-900/30">
         <div className="max-w-xl mx-auto">
           <div className="text-center mb-10">
             <div className="w-16 h-16 mx-auto mb-6 bg-red-600 rounded-full flex items-center justify-center">
