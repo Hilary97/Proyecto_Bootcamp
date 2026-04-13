@@ -1,7 +1,11 @@
 import { useState } from "react";
 
 const audioFiles = [
+<<<<<<< HEAD
   { name: "Cover - Mix Norteño", src: "/audio/AUDIO-2024-04-13-02-22-38.mp3" },
+=======
+  { name: "Cover -Tu", src: "/audio/AUDIO-2024-04-13-02-22-38.mp3" },
+>>>>>>> main
   {
     name: "Cover - Ritmo Varonil",
     src: "/audio/AUDIO-2024-03-14-19-21-31.mp3",
@@ -75,7 +79,11 @@ function App() {
               Síguenos en Facebook
             </a>
             <a
+<<<<<<< HEAD
               href="https://wa.me/message/EW4LOCEM23ERM1"
+=======
+              href="https://wa.me/3313023706"
+>>>>>>> main
               target="_blank"
               rel="noopener noreferrer"
               className="px-8 py-3 border-2 border-zinc-600 hover:border-green-500 text-white font-bold rounded-full transition-all"
@@ -333,7 +341,11 @@ function App() {
                 </svg>
               </a>
               <a
+<<<<<<< HEAD
                 href="https://wa.me/message/EW4LOCEM23ERM1"
+=======
+                href="https://wa.me/3313023706"
+>>>>>>> main
                 target="_blank"
                 rel="noopener noreferrer"
                 className="text-zinc-400 hover:text-green-500 transition"
