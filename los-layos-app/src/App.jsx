@@ -271,16 +271,16 @@ function App() {
               </p>
               <div className="flex gap-8">
                 <div>
-                  <p className="text-3xl font-bold text-red-600">100+</p>
-                  <p className="text-zinc-500 text-sm">Eventos</p>
+                  <p className="text-3xl font-bold text-red-600">10+</p>
+                  <p className="text-zinc-500 text-sm">Años de experiencia</p>
                 </div>
                 <div>
                   <p className="text-3xl font-bold text-red-600">500+</p>
                   <p className="text-zinc-500 text-sm">Fans</p>
                 </div>
                 <div>
-                  <p className="text-3xl font-bold text-red-600">5+</p>
-                  <p className="text-zinc-500 text-sm">Covers</p>
+                  <p className="text-3xl font-bold text-red-600">300+</p>
+                  <p className="text-zinc-500 text-sm">Canciones</p>
                 </div>
               </div>
             </div>
@@ -289,7 +289,10 @@ function App() {
       </section>
 
       {/* Contratar Sección */}
-      <section id="contratar" className="py-24 px-6 bg-gradient-to-r from-red-900/30 via-zinc-900 to-red-900/30">
+      <section
+        id="contratar"
+        className="py-24 px-6 bg-gradient-to-r from-red-900/30 via-zinc-900 to-red-900/30"
+      >
         <div className="max-w-xl mx-auto">
           <div className="text-center mb-10">
             <div className="w-16 h-16 mx-auto mb-6 bg-red-600 rounded-full flex items-center justify-center">
