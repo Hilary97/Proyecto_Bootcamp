@@ -143,6 +143,9 @@ section header {
    
 
   }
+  #correoIngresado div{
+    font-size: 2rem;
+  }
   
   footer
    {
