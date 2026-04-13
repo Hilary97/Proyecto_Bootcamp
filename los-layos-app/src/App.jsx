@@ -35,8 +35,19 @@ function App() {
     if (!fecha) return "";
     const [year, month, day] = fecha.split("-");
     const meses = [
-      "", "Enero", "Febrero", "Marzo", "Abril", "Mayo", "Junio",
-      "Julio", "Agosto", "Septiembre", "Octubre", "Noviembre", "Diciembre"
+      "",
+      "Enero",
+      "Febrero",
+      "Marzo",
+      "Abril",
+      "Mayo",
+      "Junio",
+      "Julio",
+      "Agosto",
+      "Septiembre",
+      "Octubre",
+      "Noviembre",
+      "Diciembre",
     ];
     return `${day}/${meses[parseInt(month)]}/${year}`;
   };
