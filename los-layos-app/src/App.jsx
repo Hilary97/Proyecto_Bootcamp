@@ -2,7 +2,10 @@ import { useState } from "react";
 import { Particulas } from "../Components/Particulas.jsx";
 
 const audioFiles = [
-  { name: "Cover - Mix Norteño", src: "/audio/AUDIO-2024-04-13-02-22-38.mp3" },
+  {
+    name: "Cover - Tunas para ti",
+    src: "/audio/AUDIO-2024-04-13-02-22-38.mp3",
+  },
 
   { name: "Cover -Tu", src: "/audio/AUDIO-2024-04-13-02-22-38.mp3" },
 
@@ -51,28 +54,6 @@ function App() {
       "Diciembre",
     ];
     return `${day}/${meses[parseInt(month)]}/${year}`;
-  };
-
-  const handleSubmit = (e) => {
-    e.preventDefault();
-    const emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-
-    if (!email) {
-      alert("No has ingresado tu correo");
-      return;
-    }
-
-    if (!emailPattern.test(email)) {
-      alert("Por favor, introduce un correo electrónico válido.");
-      return;
-    }
-
-    alert("¡Gracias por suscribirte! Pronto recibirás novedades.");
-
-    const newEmails = [...submittedEmails, email];
-    setSubmittedEmails(newEmails);
-    localStorage.setItem("emails", JSON.stringify(newEmails));
-    setEmail("");
   };
 
   // Función para enviar datos a WhatsApp
