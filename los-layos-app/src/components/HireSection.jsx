@@ -7,6 +7,11 @@ function capitalize(text) {
   return text.charAt(0).toUpperCase() + text.slice(1);
 }
 
+function formatearFecha(isoDate) {
+  const fecha = parseISO(isoDate);
+  return `${format(fecha, "dd")}/${capitalize(format(fecha, "MMMM", { locale: es }))}/${format(fecha, "yyyy")}`;
+}
+
 const today = format(new Date(), "yyyy-MM-dd");
 
 export function HireSection({ selectedDate }) {
@@ -36,9 +41,10 @@ export function HireSection({ selectedDate }) {
       return;
     }
 
-    const fecha = parseISO(fechaContratacion);
-    const diaSemana = capitalize(format(fecha, "EEEE", { locale: es }));
-    const fechaFormateada = `${format(fecha, "dd")}/${capitalize(format(fecha, "MMMM", { locale: es }))}/${format(fecha, "yyyy")}`;
+    const diaSemana = capitalize(
+      format(parseISO(fechaContratacion), "EEEE", { locale: es }),
+    );
+    const fechaFormateada = formatearFecha(fechaContratacion);
 
     const mensaje = `📅 *SOLICITUD DE CONTRATACIÓN* 📅
 
@@ -116,6 +122,14 @@ export function HireSection({ selectedDate }) {
               className="w-full px-5 py-4 rounded-xl bg-zinc-900 text-white border border-zinc-600 focus:border-red-500 focus:outline-none transition-colors cursor-pointer"
               required
             />
+            {fechaContratacion && !isBusy && (
+              <p className="text-zinc-400 text-sm mt-2">
+                Vas a agendar:{" "}
+                <span className="text-white font-semibold">
+                  {formatearFecha(fechaContratacion)}
+                </span>
+              </p>
+            )}
             {isBusy && (
               <p className="text-red-400 text-sm mt-2">
                 Esa fecha ya está ocupada. Elegí otra en el calendario de

@@ -28,7 +28,7 @@ export function Hero() {
             Síguenos en Facebook
           </a>
           <a
-            href="#contratar"
+            href="#agenda"
             className="px-10 py-4 bg-gradient-to-r from-green-500 to-green-600 hover:from-green-400 hover:to-green-500 text-white font-bold rounded-full transition-all transform hover:scale-110 shadow-lg shadow-green-500/50 animate-wiggle"
           >
             Contrátanos

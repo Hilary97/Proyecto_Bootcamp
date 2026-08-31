@@ -5,13 +5,16 @@ export function AvailabilitySection({ onSelectDate }) {
   const { busyDates, loading, error } = useAgenda();
 
   return (
-    <section className="py-24 px-6">
+    <section id="agenda" className="py-24 px-6">
       <div className="max-w-2xl mx-auto">
         <h2 className="text-4xl font-bold text-center mb-4">
           📅 Disponibilidad
         </h2>
-        <p className="text-zinc-400 text-center mb-10 max-w-xl mx-auto">
+        <p className="text-zinc-400 text-center mb-2 max-w-xl mx-auto">
           Antes de contratarnos, mirá qué días ya tenemos comprometidos.
+        </p>
+        <p className="text-red-400 text-center font-semibold mb-10 max-w-xl mx-auto">
+          👉 Tocá el día que quieras agendar
         </p>
 
         <div className="bg-zinc-800/50 backdrop-blur-sm rounded-2xl p-6 shadow-2xl border border-zinc-700/50">
