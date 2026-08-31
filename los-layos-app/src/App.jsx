@@ -1,22 +1,22 @@
+import { BrowserRouter, Routes, Route } from "react-router-dom";
+import { AuthProvider } from "./auth/AuthContext.jsx";
 import { Particulas } from "./components/Particulas.jsx";
-import { Hero } from "./components/Hero.jsx";
-import { MusicSection } from "./components/MusicSection.jsx";
-import { AboutSection } from "./components/AboutSection.jsx";
-import { HireSection } from "./components/HireSection.jsx";
-import { Footer } from "./components/Footer.jsx";
+import { HomePage } from "./pages/HomePage.jsx";
+import { AdminPage } from "./pages/AdminPage.jsx";
 
 function App() {
   return (
-    <>
-      <Particulas />
-      <div className="relative z-10 min-h-screen text-white font-sans">
-        <Hero />
-        <MusicSection />
-        <AboutSection />
-        <HireSection />
-        <Footer />
-      </div>
-    </>
+    <BrowserRouter>
+      <AuthProvider>
+        <Particulas />
+        <div className="relative z-10 min-h-screen text-white font-sans">
+          <Routes>
+            <Route path="/" element={<HomePage />} />
+            <Route path="/admin" element={<AdminPage />} />
+          </Routes>
+        </div>
+      </AuthProvider>
+    </BrowserRouter>
   );
 }
 
