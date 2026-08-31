@@ -39,7 +39,11 @@ export function AdminAgendaPanel() {
               Guardando {pendingDay}...
             </p>
           )}
-          <MonthCalendar busyDates={busyDates} onDayClick={handleDayClick} />
+          <MonthCalendar
+            busyDates={busyDates}
+            onDayClick={handleDayClick}
+            allowBusyClick
+          />
         </div>
       )}
     </div>

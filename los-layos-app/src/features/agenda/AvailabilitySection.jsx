@@ -1,7 +1,7 @@
 import { MonthCalendar } from "./MonthCalendar.jsx";
 import { useAgenda } from "./useAgenda.js";
 
-export function AvailabilitySection() {
+export function AvailabilitySection({ onSelectDate }) {
   const { busyDates, loading, error } = useAgenda();
 
   return (
@@ -23,7 +23,9 @@ export function AvailabilitySection() {
               No pudimos cargar la agenda. Probá de nuevo más tarde.
             </p>
           )}
-          {!loading && !error && <MonthCalendar busyDates={busyDates} />}
+          {!loading && !error && (
+            <MonthCalendar busyDates={busyDates} onDayClick={onSelectDate} />
+          )}
 
           <div className="flex gap-6 justify-center mt-6 text-sm text-zinc-400">
             <span className="flex items-center gap-2">

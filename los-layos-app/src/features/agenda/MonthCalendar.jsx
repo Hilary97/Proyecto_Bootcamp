@@ -16,7 +16,7 @@ import { es } from "date-fns/locale";
 
 const WEEKDAYS = ["Lun", "Mar", "Mié", "Jue", "Vie", "Sáb", "Dom"];
 
-export function MonthCalendar({ busyDates, onDayClick }) {
+export function MonthCalendar({ busyDates, onDayClick, allowBusyClick = false }) {
   const [month, setMonth] = useState(startOfMonth(new Date()));
   const today = startOfToday();
   const start = startOfWeek(startOfMonth(month), { weekStartsOn: 1 });
@@ -57,7 +57,11 @@ export function MonthCalendar({ busyDates, onDayClick }) {
           const inMonth = isSameMonth(day, month);
           const isPast = isBefore(day, today);
           const isBusy = busyDates.has(dayKey);
-          const clickable = Boolean(onDayClick) && inMonth && !isPast;
+          const clickable =
+            Boolean(onDayClick) &&
+            inMonth &&
+            !isPast &&
+            (allowBusyClick || !isBusy);
 
           return (
             <button

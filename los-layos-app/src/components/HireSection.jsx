@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { format, parseISO } from "date-fns";
 import { es } from "date-fns/locale";
 import { useAgenda } from "../features/agenda/useAgenda.js";
@@ -9,11 +9,15 @@ function capitalize(text) {
 
 const today = format(new Date(), "yyyy-MM-dd");
 
-export function HireSection() {
+export function HireSection({ selectedDate }) {
   const { busyDates } = useAgenda();
   const [nombreContratante, setNombreContratante] = useState("");
   const [fechaContratacion, setFechaContratacion] = useState("");
   const [horasRequeridas, setHorasRequeridas] = useState("");
+
+  useEffect(() => {
+    if (selectedDate) setFechaContratacion(selectedDate);
+  }, [selectedDate]);
 
   const isBusy = Boolean(fechaContratacion) && busyDates.has(fechaContratacion);
 
