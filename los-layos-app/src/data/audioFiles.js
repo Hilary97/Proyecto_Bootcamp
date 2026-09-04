@@ -1,6 +1,6 @@
 export const audioFiles = [
   {
-    name: "Cover - Tunas para ti",
+    name: "Cover - Tu",
     src: "/audio/AUDIO-2024-04-13-02-22-38.mp3",
   },
   { name: "Cover -Tu", src: "/audio/AUDIO-2024-04-13-02-22-38.mp3" },
