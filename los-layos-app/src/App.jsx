@@ -9,7 +9,7 @@ function App() {
     <BrowserRouter>
       <AuthProvider>
         <Particulas />
-        <div className="relative z-10 min-h-screen text-white font-sans">
+        <div className="relative z-10 min-h-screen text-ivory font-sans">
           <Routes>
             <Route path="/" element={<HomePage />} />
             <Route path="/admin" element={<AdminPage />} />

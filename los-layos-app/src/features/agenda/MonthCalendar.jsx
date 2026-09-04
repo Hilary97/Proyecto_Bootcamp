@@ -29,7 +29,7 @@ export function MonthCalendar({ busyDates, onDayClick, allowBusyClick = false })
         <button
           type="button"
           onClick={() => setMonth((m) => subMonths(m, 1))}
-          className="px-3 py-1 rounded-lg bg-zinc-800 hover:bg-zinc-700 text-zinc-300"
+          className="px-3 py-1 rounded-lg bg-ink-800 hover:bg-ink-700 text-ivory/80"
         >
           ‹
         </button>
@@ -39,13 +39,13 @@ export function MonthCalendar({ busyDates, onDayClick, allowBusyClick = false })
         <button
           type="button"
           onClick={() => setMonth((m) => addMonths(m, 1))}
-          className="px-3 py-1 rounded-lg bg-zinc-800 hover:bg-zinc-700 text-zinc-300"
+          className="px-3 py-1 rounded-lg bg-ink-800 hover:bg-ink-700 text-ivory/80"
         >
           ›
         </button>
       </div>
 
-      <div className="grid grid-cols-7 gap-1 text-center text-xs text-zinc-500 mb-2 uppercase tracking-wide">
+      <div className="grid grid-cols-7 gap-1 text-center text-xs text-ivory-muted mb-2 uppercase tracking-wide">
         {WEEKDAYS.map((day) => (
           <span key={day}>{day}</span>
         ))}
@@ -71,12 +71,12 @@ export function MonthCalendar({ busyDates, onDayClick, allowBusyClick = false })
               onClick={clickable ? () => onDayClick(dayKey) : undefined}
               className={`aspect-square rounded-lg text-sm flex items-center justify-center transition-colors ${
                 !inMonth
-                  ? "text-zinc-700"
+                  ? "text-ivory-muted/30"
                   : isPast
-                    ? "text-zinc-600 bg-zinc-900/40"
+                    ? "text-ivory-muted/40 bg-ink-900/70"
                     : isBusy
-                      ? "bg-red-600/30 text-red-300 border border-red-600/50"
-                      : "bg-green-600/20 text-green-300 border border-green-600/40 hover:bg-green-600/30"
+                      ? "bg-red-600/25 text-red-300 border border-red-500/50"
+                      : "bg-jade-600/20 text-jade-300 border border-jade-600/40 hover:bg-jade-600/40"
               } ${clickable ? "cursor-pointer" : "cursor-default"}`}
             >
               {format(day, "d")}

@@ -1,16 +1,36 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { audioFiles } from "../data/audioFiles.js";
+import { ScrollTrigger } from "../lib/gsap.js";
+import { useReveal } from "../hooks/useReveal.js";
+import { SectionDivider } from "./SectionDivider.jsx";
 
 export function MusicSection() {
   const [currentAudio, setCurrentAudio] = useState(null);
+  const root = useReveal({ selector: "[data-reveal]", stagger: 0.08 });
+
+  // Expanding a card changes the page height; keep scroll positions accurate.
+  useEffect(() => {
+    ScrollTrigger.refresh();
+  }, [currentAudio]);
 
   return (
-    <section className="py-24 px-6 bg-zinc-900/50">
+    <section
+      id="musica"
+      ref={root}
+      className="scroll-mt-[72px] px-6 py-24 bg-ink-900/70"
+    >
+      <SectionDivider />
       <div className="max-w-4xl mx-auto">
-        <h2 className="text-4xl font-bold text-center mb-4">
-          🎵 Nuestros Covers
+        <p
+          data-reveal
+          className="text-center text-sm font-semibold tracking-[0.3em] text-gold-500"
+        >
+          Escúchanos
+        </p>
+        <h2 data-reveal className="mt-2 mb-4 text-center text-4xl">
+          Nuestros covers
         </h2>
-        <p className="text-zinc-400 text-center mb-12 max-w-xl mx-auto">
+        <p data-reveal className="text-ivory-muted text-center mb-12 max-w-xl mx-auto">
           Disfruta de nuestras interpretaciones únicas de los clásicos
           norteños. Cada cover está lleno de nuestra pasión y estilo único.
         </p>
@@ -19,10 +39,11 @@ export function MusicSection() {
           {audioFiles.map((audio, index) => (
             <div
               key={index}
-              className={`p-6 rounded-2xl transition-all cursor-pointer border-2 ${
+              data-reveal
+              className={`p-6 rounded-2xl transition-[transform,border-color,background-color] cursor-pointer border-2 hover:-translate-y-1 ${
                 currentAudio === index
-                  ? "bg-red-600/20 border-red-600"
-                  : "bg-zinc-800/50 border-zinc-700 hover:border-zinc-500"
+                  ? "bg-jade-600/20 border-jade-500"
+                  : "bg-ink-800/60 border-jade-700/40 hover:border-gold-500/60"
               }`}
               onClick={() =>
                 setCurrentAudio(index === currentAudio ? null : index)
@@ -32,7 +53,7 @@ export function MusicSection() {
                 <div className="flex items-center gap-4">
                   <div
                     className={`w-12 h-12 rounded-full flex items-center justify-center ${
-                      currentAudio === index ? "bg-red-600" : "bg-zinc-700"
+                      currentAudio === index ? "bg-jade-600" : "bg-ink-700"
                     }`}
                   >
                     {currentAudio === index ? (
@@ -67,13 +88,13 @@ export function MusicSection() {
                   </div>
                   <div>
                     <h3 className="font-bold text-lg">{audio.name}</h3>
-                    <p className="text-zinc-500 text-sm">
+                    <p className="text-ivory-muted text-sm">
                       Click para reproducir
                     </p>
                   </div>
                 </div>
                 <svg
-                  className={`w-5 h-5 text-zinc-500 transition-transform ${currentAudio === index ? "rotate-180" : ""}`}
+                  className={`w-5 h-5 text-ivory-muted transition-transform ${currentAudio === index ? "rotate-180" : ""}`}
                   fill="none"
                   stroke="currentColor"
                   viewBox="0 0 24 24"

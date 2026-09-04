@@ -1,46 +1,55 @@
-export function AboutSection() {
+import { useReveal } from "../hooks/useReveal.js";
+import { useCountUp } from "../hooks/useCountUp.js";
+import { SectionDivider } from "./SectionDivider.jsx";
+
+function Stat({ value, label }) {
+  const ref = useCountUp({ to: value, suffix: "+" });
   return (
-    <section className="py-24 px-6">
-      <div className="max-w-4xl mx-auto">
-        <div className="grid md:grid-cols-2 gap-12 items-center">
-          <div>
+    <div>
+      <p ref={ref} className="font-display text-5xl text-jade-400">
+        {value}+
+      </p>
+      <span className="mt-1 block h-px w-8 bg-gold-500/60" aria-hidden="true" />
+      <p className="mt-2 text-sm text-ivory-muted">{label}</p>
+    </div>
+  );
+}
+
+export function AboutSection() {
+  const root = useReveal({ selector: "[data-reveal]" });
+
+  return (
+    <section id="nosotros" ref={root} className="scroll-mt-[72px] px-6 py-24">
+      <SectionDivider />
+      <div className="mx-auto max-w-4xl">
+        <div className="grid items-center gap-12 md:grid-cols-2">
+          <div data-reveal>
             <img
               src="/images/IMG_2755.PNG"
-              alt="Sobre nosotros"
-              className="rounded-2xl shadow-2xl"
+              alt="Adicción Norteña Los Layos en escena"
+              className="rounded-2xl shadow-2xl ring-1 ring-gold-500/20"
+              loading="lazy"
             />
           </div>
-          <div>
-            <span className="text-red-600 font-bold tracking-wider uppercase">
-              Sobre Nosotros
-            </span>
-            <h2 className="text-4xl font-bold mt-2 mb-6">
-              La Música que Mueve Tu Mundo
-            </h2>
-            <p className="text-zinc-400 mb-4 leading-relaxed">
-              Somos una empresa comprometida con la excelencia musical y la
+          <div data-reveal>
+            <p className="text-sm font-semibold tracking-[0.3em] text-gold-500">
+              Sobre nosotros
+            </p>
+            <h2 className="mb-6 mt-2 text-4xl">La música que mueve tu mundo</h2>
+            <p className="mb-4 leading-relaxed text-ivory-muted">
+              Somos un grupo comprometido con la excelencia musical y la
               conexión genuina con nuestro público. Cada presentación es una
               experiencia única llena de pasión, tradición y el ritmo que nos
               caracteriza.
             </p>
-            <p className="text-zinc-400 mb-6 leading-relaxed">
-              "Tu próxima canción favorita está a punto de sonar. Descubre el
-              ritmo que te hará vibrar con 'AN Los Layos'. ¡La música que
-              mueve tu mundo!"
+            <p className="mb-8 leading-relaxed text-ivory-muted">
+              Tu próxima canción favorita está a punto de sonar. Descubre el
+              ritmo que te hará vibrar con AN Los Layos.
             </p>
-            <div className="flex gap-8">
-              <div>
-                <p className="text-3xl font-bold text-red-600">10+</p>
-                <p className="text-zinc-500 text-sm">Años de experiencia</p>
-              </div>
-              <div>
-                <p className="text-3xl font-bold text-red-600">500+</p>
-                <p className="text-zinc-500 text-sm">Fans</p>
-              </div>
-              <div>
-                <p className="text-3xl font-bold text-red-600">300+</p>
-                <p className="text-zinc-500 text-sm">Canciones</p>
-              </div>
+            <div className="flex gap-10">
+              <Stat value={10} label="Años de experiencia" />
+              <Stat value={500} label="Fans" />
+              <Stat value={300} label="Canciones" />
             </div>
           </div>
         </div>
