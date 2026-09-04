@@ -18,12 +18,12 @@ export function Particulas() {
     let width = canvas.width;
     let height = canvas.height;
 
-    // Colores que combinan con tu marca roja
+    // Brand palette: red primary, gold accents.
     const colors = {
-      primary: "#dc2626", // rojo
-      secondary: "#f97316", // naranja
-      accent: "#fbbf24", // ámbar
-      glow: "rgba(220, 38, 38, 0.6)",
+      primary: "#14A36A",
+      secondary: "#D4AF37",
+      accent: "#F5D77A",
+      glow: "rgba(20, 163, 106, 0.35)",
     };
 
     const particles = [];
@@ -35,7 +35,7 @@ export function Particulas() {
     }
 
     // Crear partículas
-    for (let i = 0; i < 80; i++) {
+    for (let i = 0; i < 40; i++) {
       particles.push({
         x: randomBetween(0, width),
         y: randomBetween(0, height),
@@ -45,7 +45,7 @@ export function Particulas() {
         color: [colors.primary, colors.secondary, colors.accent][
           Math.floor(Math.random() * 3)
         ],
-        alpha: randomBetween(0.4, 1),
+        alpha: randomBetween(0.15, 0.5),
         pulseSpeed: randomBetween(0.01, 0.03),
         pulsePhase: randomBetween(0, Math.PI * 2),
       });
@@ -53,7 +53,7 @@ export function Particulas() {
 
     // Crear meteoros ocasionales
     function createShootingStar() {
-      if (shootingStars.length < 3 && Math.random() < 0.02) {
+      if (shootingStars.length < 2 && Math.random() < 0.015) {
         shootingStars.push({
           x: randomBetween(0, width),
           y: randomBetween(0, height * 0.5),
@@ -76,8 +76,8 @@ export function Particulas() {
         height / 2,
         width,
       );
-      gradient.addColorStop(0, "rgba(30, 20, 25, 0.95)");
-      gradient.addColorStop(1, "rgba(12, 12, 15, 1)");
+      gradient.addColorStop(0, "rgba(7, 14, 11, 1)");
+      gradient.addColorStop(1, "rgba(3, 6, 5, 1)");
       ctx.fillStyle = gradient;
       ctx.fillRect(0, 0, width, height);
 
@@ -120,8 +120,8 @@ export function Particulas() {
           const p1 = particles[i];
           const p2 = particles[j];
           const dist = Math.hypot(p1.x - p2.x, p1.y - p2.y);
-          if (dist < 150) {
-            const opacity = (1 - dist / 150) * 0.5;
+          if (dist < 100) {
+            const opacity = (1 - dist / 100) * 0.4;
             ctx.beginPath();
             ctx.moveTo(p1.x, p1.y);
             ctx.lineTo(p2.x, p2.y);
@@ -234,14 +234,31 @@ export function Particulas() {
       }
     }
 
+    let rafId = null;
+
     function animate() {
       updateParticles();
       drawParticles();
       createShootingStar();
-      requestAnimationFrame(animate);
+      rafId = requestAnimationFrame(animate);
     }
 
-    animate();
+    function start() {
+      if (rafId === null) rafId = requestAnimationFrame(animate);
+    }
+
+    function stop() {
+      if (rafId !== null) cancelAnimationFrame(rafId);
+      rafId = null;
+    }
+
+    // Pause the loop while the tab is hidden.
+    function handleVisibility() {
+      if (document.hidden) stop();
+      else start();
+    }
+
+    start();
 
     function handleResize() {
       resizeCanvas();
@@ -262,8 +279,11 @@ export function Particulas() {
     window.addEventListener("resize", handleResize);
     window.addEventListener("mousemove", handleMouse);
     window.addEventListener("mouseout", handleMouseOut);
+    document.addEventListener("visibilitychange", handleVisibility);
 
     return () => {
+      stop();
+      document.removeEventListener("visibilitychange", handleVisibility);
       window.removeEventListener("resize", handleResize);
       window.removeEventListener("mousemove", handleMouse);
       window.removeEventListener("mouseout", handleMouseOut);
