@@ -2,7 +2,7 @@
 
 A single-page promotional site built for a Mexican norteño music band, designed to showcase their work, build an online presence, and convert visitors into booked gigs.
 
-🔗 **Live demo:** https://anloslayos.netlify.app
+🔗 **Live demo:** __[https://proyecto-bootcamp-sepia.vercel.app/]__
 
 ![Prototype](<los-layos-app/Bloc%20de%20notas%20sin%20título%20(2)-2.jpg>)
 
